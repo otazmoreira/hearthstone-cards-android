@@ -153,12 +153,12 @@ private fun ContentCard(state: DetailsViewState) {
 
 @Preview
 @Composable
-private fun ContentPreview() {
+fun ContentPreview() {
     Content(state = DetailsViewState(card = CardModel.mock), action = {})
 }
 
 @Preview
 @Composable
-private fun ContentNullCardPreview() {
+fun ContentNullCardPreview() {
     Content(state = DetailsViewState(), action = {})
 }

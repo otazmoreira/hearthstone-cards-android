@@ -61,7 +61,9 @@ data class CardModel(
             cost = 1,
             dbfId = 100777,
             elite = false,
-            flavor = "Magi conjured arcane arrows to sell to hunters, until hunters learned just enough magic to do it themselves.  The resulting loss of jobs sent Stormwind into a minor recession.",
+            flavor = "Magi conjured arcane arrows to sell to hunters, until hunters learned just" +
+                    " enough magic to do it themselves.  The resulting loss of jobs sent " +
+                    "Stormwind into a minor recession.",
             health = 0,
             locale = "enUS",
             name = "Arcane Shot",

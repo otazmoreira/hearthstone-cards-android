@@ -13,7 +13,6 @@ internal fun Project.configureFeatureDependencies(
     commonExtension: CommonExtension<*, *, *, *>
 ) {
     val libs = extensions.getByType<VersionCatalogsExtension>().named("libs")
-
     commonExtension.apply {
         dependencies {
             implementation(project(":core:commons"))

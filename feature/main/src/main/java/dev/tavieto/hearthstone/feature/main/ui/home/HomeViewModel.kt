@@ -27,7 +27,6 @@ class HomeViewModel(
     fun dispatchAction(action: HomeViewAction) {
         when (action) {
             is Get.Cards -> getCards()
-            is Get.Page.First -> getFirstPage()
             is Get.Page.Next -> getNextPage()
             is Navigate.Details -> navigation.navigateToDetails(action.card)
             is Set.Loading -> setLoading(action.isLoading)
@@ -36,10 +35,6 @@ class HomeViewModel(
 
     private fun setLoading(isLoading: Boolean) {
         _state.update { it.copy(isLoading = isLoading) }
-    }
-
-    private fun getFirstPage() {
-
     }
 
     private fun getNextPage() {

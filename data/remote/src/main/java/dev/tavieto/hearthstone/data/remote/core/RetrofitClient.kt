@@ -1,13 +1,14 @@
 package dev.tavieto.hearthstone.data.remote.core
 
 import dev.tavieto.hearthstone.data.remote.BuildConfig
-import java.time.Duration
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import java.util.concurrent.TimeUnit
 
 object RetrofitClient {
+    private const val TIMEOUT_LIMIT: Long = 5
+
     operator fun invoke(
         interceptor: Interceptor?
     ): OkHttpClient {
@@ -16,10 +17,10 @@ object RetrofitClient {
             if (BuildConfig.DEBUG) {
                 addInterceptor(HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY))
             }
-            connectTimeout(5, TimeUnit.MINUTES)
-            callTimeout(5, TimeUnit.MINUTES)
-            readTimeout(5, TimeUnit.MINUTES)
-            writeTimeout(5, TimeUnit.MINUTES)
+            connectTimeout(TIMEOUT_LIMIT, TimeUnit.MINUTES)
+            callTimeout(TIMEOUT_LIMIT, TimeUnit.MINUTES)
+            readTimeout(TIMEOUT_LIMIT, TimeUnit.MINUTES)
+            writeTimeout(TIMEOUT_LIMIT, TimeUnit.MINUTES)
         }.build()
     }
 }

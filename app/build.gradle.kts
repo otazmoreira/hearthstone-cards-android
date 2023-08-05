@@ -1,9 +1,12 @@
+import io.gitlab.arturbosch.detekt.Detekt
+
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
     id("dev.tavieto.android.compose")
     id("com.google.gms.google-services")
     id("com.google.firebase.crashlytics")
+    id("io.gitlab.arturbosch.detekt")
 }
 
 android {
@@ -58,15 +61,15 @@ dependencies {
     implementation(libs.firebase.analytics.ktx)
     implementation(libs.firebase.crashlytics.ktx)
     implementation(libs.firebase.perf.ktx)
-    implementation("androidx.appcompat:appcompat:1.6.1")
-    implementation("com.google.android.material:material:1.5.0")
-    implementation("androidx.constraintlayout:constraintlayout:2.1.3")
 
     testImplementation(libs.junit)
-//    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
-//    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
-//    androidTestImplementation platform('androidx.compose:compose-bom:2022.10.00')
-//    androidTestImplementation 'androidx.compose.ui:ui-test-junit4'
-//    debugImplementation 'androidx.compose.ui:ui-tooling'
-//    debugImplementation 'androidx.compose.ui:ui-test-manifest'
+}
+
+detekt {
+    toolVersion = "1.23.1"
+    config.setFrom(files("$rootDir/config/detekt/detekt.yml"))
+    autoCorrect = true
+    parallel = true
+    ignoreFailures = false
+    buildUponDefaultConfig = true
 }

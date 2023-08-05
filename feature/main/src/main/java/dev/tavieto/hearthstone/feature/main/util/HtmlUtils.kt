@@ -219,9 +219,11 @@ private enum class TagClassification {
 
     companion object {
         fun getClassification(value: String): TagClassification {
-            if (value.contains("/>")) return SELF_CLOSING
-            if (value.contains("</")) return CLOSE
-            return OPEN
+            return when {
+                value.contains("/>") -> SELF_CLOSING
+                value.contains("</") -> CLOSE
+                else -> OPEN
+            }
         }
     }
 }

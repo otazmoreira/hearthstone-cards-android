@@ -9,7 +9,7 @@ import dev.tavieto.hearthstone.data.local.entity.CardEntity
 @Dao
 interface CardDao {
     @Insert(onConflict = OnConflictStrategy.IGNORE)
-    fun insertCards(vararg cards: CardEntity)
+    fun insertCards(cards: List<CardEntity>)
 
     @Query(value = "SELECT * FROM cards")
     fun getCards(): List<CardEntity>

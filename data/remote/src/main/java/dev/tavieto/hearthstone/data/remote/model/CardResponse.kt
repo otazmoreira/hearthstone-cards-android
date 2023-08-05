@@ -47,6 +47,7 @@ internal data class CardResponse(
     @SerializedName("type")
     val type: String? = null
 ) {
+    @Suppress("CyclomaticComplexMethod")
     fun mapToDomain(): CardDomain {
         return CardDomain(
             artist = artist ?: String.Empty,

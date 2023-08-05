@@ -2,6 +2,7 @@ import com.android.build.gradle.LibraryExtension
 import dev.tavieto.buildlogic.configureAndroidDefaultSettings
 import dev.tavieto.buildlogic.configureFeatureDependencies
 import dev.tavieto.buildlogic.configureJetpackCompose
+import dev.tavieto.buildlogic.configureDetektStaticAnalysis
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.getByType
@@ -17,6 +18,7 @@ class AndroidFeatureDefaultSettings: Plugin<Project> {
             configureAndroidDefaultSettings(extension)
             configureJetpackCompose(extension)
             configureFeatureDependencies(extension)
+            configureDetektStaticAnalysis()
         }
     }
 }

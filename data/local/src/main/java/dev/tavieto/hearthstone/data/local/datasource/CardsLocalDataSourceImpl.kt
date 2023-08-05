@@ -24,7 +24,7 @@ internal class CardsLocalDataSourceImpl(
     }
 
     override fun saveCards(cards: List<CardDomain>): Either<Unit> {
-        return runCatchData { dao.insertCards(*cards.mapToEntity().toTypedArray()) }
+        return runCatchData { dao.insertCards(cards.mapToEntity()) }
     }
 
     override fun getCards(page: Int, itemCount: Int): Either<List<CardDomain>> {
