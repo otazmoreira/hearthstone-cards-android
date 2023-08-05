@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="name_label">Nome: %1$s</string>
+    <string name="flavor_label">Variação: %1$s</string>
+    <string name="attack_label">Ataque: %1$d</string>
+    <string name="card_set_label">Coleção: %1$s</string>
+    <string name="cost_label">Custo: %1$s</string>
+    <string name="faction_label">Facção: %1$s</string>
+    <string name="health_label">Vida: %1$d</string>
+    <string name="race_label">Raça: %1$s</string>
+    <string name="rarity_label">Raridade: %1$s</string>
+    <string name="type_label">Tipo: %1$s</string>
+    <string name="description_label">Descrição</string>
+</resources>
