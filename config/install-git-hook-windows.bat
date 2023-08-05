@@ -8,6 +8,7 @@ echo "pre-commit file was created!"
 
 echo "Making files executables"
 icacls ..\.git\hooks\pre-commit /grant Everyone:RX
+icacls ..\gradlew /grant Everyone:RX
 
 echo "Finished!"
 
