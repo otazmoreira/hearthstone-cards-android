@@ -119,6 +119,9 @@ complexity:
       - 'run'
       - 'use'
       - 'with'
+      - 'equals'
+    ignoreFunction:
+      - 'equals'
   LabeledExpression:
     active: false
     ignoredLabels: []
