@@ -48,4 +48,34 @@ data class CardDomain(
             rarity = "Legendary"
         )
     }
+
+    override fun equals(other: Any?): Boolean {
+        if (this === other) return true
+        if (javaClass != other?.javaClass) return false
+
+        other as CardDomain
+
+        if (artist != other.artist) return false
+        if (attack != other.attack) return false
+        if (cardId != other.cardId) return false
+        if (cardSet != other.cardSet) return false
+        if (playerClass != other.playerClass) return false
+        if (collectible != other.collectible) return false
+        if (cost != other.cost) return false
+        if (dbfId != other.dbfId) return false
+        if (elite != other.elite) return false
+        if (faction != other.faction) return false
+        if (flavor != other.flavor) return false
+        if (health != other.health) return false
+        if (img != other.img) return false
+        if (imgGold != other.imgGold) return false
+        if (locale != other.locale) return false
+        if (name != other.name) return false
+        if (race != other.race) return false
+        if (rarity != other.rarity) return false
+        if (text != other.text) return false
+        if (type != other.type) return false
+
+        return true
+    }
 }

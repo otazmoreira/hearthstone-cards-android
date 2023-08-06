@@ -18,6 +18,9 @@ class KotlinDomain : Plugin<Project> {
                 add("implementation", project(":core:commons"))
                 add("implementation", libs.getLibrary("koin-core"))
                 add("implementation", libs.getLibrary("kotlinx-coroutines-core"))
+                add("testImplementation", libs.getLibrary("mockk"))
+                add("testImplementation", libs.getLibrary("junit"))
+                add("testImplementation", libs.getLibrary("kotlinx-coroutines-test"))
             }
         }
     }
