@@ -1,12 +1,9 @@
-import io.gitlab.arturbosch.detekt.Detekt
-
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
     id("dev.tavieto.android.compose")
     id("com.google.gms.google-services")
     id("com.google.firebase.crashlytics")
-    id("io.gitlab.arturbosch.detekt")
 }
 
 android {
@@ -23,7 +20,7 @@ android {
     }
 
     kotlinOptions {
-        jvmTarget = JavaVersion.VERSION_1_8.toString()
+        jvmTarget = JavaVersion.VERSION_11.toString()
     }
 
     packagingOptions {
@@ -63,13 +60,4 @@ dependencies {
     implementation(libs.firebase.perf.ktx)
 
     testImplementation(libs.junit)
-}
-
-detekt {
-    toolVersion = "1.23.1"
-    config.setFrom(files("$rootDir/config/detekt/detekt.yml"))
-    autoCorrect = true
-    parallel = true
-    ignoreFailures = false
-    buildUponDefaultConfig = true
 }

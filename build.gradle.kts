@@ -13,16 +13,6 @@ buildscript {
     dependencies {
         classpath("com.google.gms:google-services:4.3.15")
         classpath("com.google.firebase:firebase-crashlytics-gradle:2.9.8")
-        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:1.9.0")
-        classpath("io.gitlab.arturbosch.detekt:detekt-gradle-plugin:1.23.1")
+        classpath("io.gitlab.arturbosch.detekt:detekt-gradle-plugin:1.22.0")
     }
 }
-
-//detekt {
-//    toolVersion = "1.23.1"
-//    config(files("$rootDir/config/detekt/detekt.yml"))
-//    autoCorrect = true
-//    parallel = true
-//    ignoreFailures = false
-//    buildUponDefaultConfig = true
-//}

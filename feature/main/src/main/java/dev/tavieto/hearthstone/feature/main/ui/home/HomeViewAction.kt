@@ -4,9 +4,9 @@ import dev.tavieto.hearthstone.feature.main.model.CardModel
 
 sealed class HomeViewAction {
     object Get {
-        data object Cards : HomeViewAction()
+        object Cards : HomeViewAction()
         object Page {
-            data object Next : HomeViewAction()
+            object Next : HomeViewAction()
         }
     }
 

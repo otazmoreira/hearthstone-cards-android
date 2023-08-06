@@ -11,7 +11,7 @@ java {
 
 dependencies {
     compileOnly("com.android.tools.build:gradle:8.0.1")
-    compileOnly("io.gitlab.arturbosch.detekt:detekt-gradle-plugin:1.23.1")
+    compileOnly("io.gitlab.arturbosch.detekt:detekt-gradle-plugin:1.22.0")
 }
 
 gradlePlugin {

@@ -1,8 +1,6 @@
 package dev.tavieto.buildlogic
 
 import com.android.build.api.dsl.LibraryExtension
-import com.android.build.api.dsl.Packaging
-import com.android.build.gradle.internal.packaging.defaultExcludes
 import org.gradle.api.JavaVersion
 import org.gradle.api.Project
 import java.util.Properties
@@ -23,8 +21,8 @@ internal fun Project.configureAndroidDefaultSettings(
         }
 
         compileOptions {
-            sourceCompatibility = JavaVersion.VERSION_1_8
-            targetCompatibility = JavaVersion.VERSION_1_8
+            sourceCompatibility = JavaVersion.VERSION_11
+            targetCompatibility = JavaVersion.VERSION_11
         }
 
         sourceSets {
@@ -63,8 +61,8 @@ internal fun Project.configureAndroidDefaultSettings(
         }
 
         compileOptions {
-            sourceCompatibility = JavaVersion.VERSION_1_8
-            targetCompatibility = JavaVersion.VERSION_1_8
+            sourceCompatibility = JavaVersion.VERSION_11
+            targetCompatibility = JavaVersion.VERSION_11
         }
     }
 }
