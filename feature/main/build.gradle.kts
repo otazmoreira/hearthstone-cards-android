@@ -8,7 +8,7 @@ true
 android.namespace = "dev.tavieto.hearthstone.feature.main"
 
 dependencies {
-    implementation(project(":domain:cards"))
+    implementation(projects.domain.cards)
     implementation(platform(libs.kotlin.bom))
     implementation(libs.landscapist.glide)
     implementation(libs.lottie.compose)

@@ -1,23 +1,17 @@
+@Suppress("DSL_SCOPE_VIOLATION")
 plugins {
-    id("dev.tavieto.android.library")
-    id("dev.tavieto.android.compose")
+    alias(libs.plugins.dev.tavieto.android.library)
+    alias(libs.plugins.dev.tavieto.android.compose)
 }
+true
 
 android.namespace = "dev.tavieto.hearthstone.core.navigation"
 
 dependencies {
-    implementation(project(":core:commons"))
-
-    // project features
-    implementation(project(":feature:main"))
-
-    // navigation
+    implementation(projects.core.commons)
+    implementation(projects.feature.main)
     api(libs.androidx.navigation)
     api(libs.androidx.navigation.common.ktx)
-
-    // dependency injection
     implementation(libs.koin.androidx.compose)
-
-    // gson
     implementation(libs.gson)
 }

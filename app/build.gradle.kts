@@ -1,10 +1,12 @@
+@Suppress("DSL_SCOPE_VIOLATION")
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
-    id("dev.tavieto.android.compose")
+    alias(libs.plugins.dev.tavieto.android.compose)
     id("com.google.gms.google-services")
     id("com.google.firebase.crashlytics")
 }
+true
 
 android {
     namespace = "dev.tavieto.hearthstone.app"
@@ -41,16 +43,16 @@ android {
 }
 
 dependencies {
-    implementation(project(":core:navigation"))
-    implementation(project(":core:uikit"))
-    implementation(project(":core:commons"))
-    implementation(project(":core:core"))
-    implementation(project(":data:local"))
-    implementation(project(":data:remote"))
-    implementation(project(":repository"))
+    implementation(projects.core.commons)
+    implementation(projects.core.core)
+    implementation(projects.core.navigation)
+    implementation(projects.core.uikit)
+    implementation(projects.data.local)
+    implementation(projects.data.remote)
+    implementation(projects.repository)
 
     implementation(libs.androidx.core.ktx)
-    implementation(platform("org.jetbrains.kotlin:kotlin-bom:1.8.0"))
+    implementation(platform(libs.kotlin.bom))
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)
     implementation(libs.koin.android)
@@ -58,6 +60,4 @@ dependencies {
     implementation(libs.firebase.analytics.ktx)
     implementation(libs.firebase.crashlytics.ktx)
     implementation(libs.firebase.perf.ktx)
-
-    testImplementation(libs.junit)
 }

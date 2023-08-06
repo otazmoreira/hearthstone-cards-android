@@ -13,7 +13,10 @@ dependencyResolutionManagement {
         mavenCentral()
     }
 }
-rootProject.name = "Hearthstone Cards"
+
+enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
+
+rootProject.name = "Hearthstone-Cards"
 include(":app")
 include(":core:core")
 include(":core:commons")

@@ -1,24 +1,17 @@
+@Suppress("DSL_SCOPE_VIOLATION")
 plugins {
-    id("dev.tavieto.android.library")
-    id("dev.tavieto.android.compose")
+    alias(libs.plugins.dev.tavieto.android.library)
+    alias(libs.plugins.dev.tavieto.android.compose)
     id("kotlin-parcelize")
 }
+true
 
 android.namespace = "dev.tavieto.hearthstone.core"
 
 dependencies {
-    api(project(":core:commons"))
+    api(projects.core.commons)
     implementation(libs.koin.core)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.lifecycle.viewmodel.ktx)
-    implementation(libs.gson)
     implementation(libs.kotlinx.coroutines.core)
-
-    implementation(libs.accompanist.insetsui)
-    implementation(libs.accompanist.navigation)
-    implementation(libs.accompanist.permissions)
-    implementation(libs.accompanist.systemuicontroller)
-    implementation(libs.androidx.compose.foundation)
-    
-    testImplementation(libs.junit)
 }

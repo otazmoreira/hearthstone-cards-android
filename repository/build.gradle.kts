@@ -4,8 +4,8 @@ plugins {
 }
 
 dependencies {
-    implementation(project(":core:commons"))
-    api(project(":domain:cards"))
+    implementation(projects.core.commons)
+    api(projects.domain.cards)
     implementation(libs.koin.core)
     implementation(libs.kotlinx.coroutines.core)
 }
